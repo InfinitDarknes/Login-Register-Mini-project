@@ -29,8 +29,9 @@ body {
 }
 #title {
   font-size: 2em;
-  color: #dad6d6;
+  color: #40c057;
   font-family: SpaceGroteskBold;
+  text-align: center;
 }
 form {
   width: 100%;
@@ -38,6 +39,30 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#first-step,
+#second-step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#second-step {
+  display: none;
+}
+#next-step-button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #1b1a1d;
+  color: #dad6d6;
+  font-size: 1.3em;
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #40c057;
+  cursor: pointer;
 }
 input {
   width: 100%;
@@ -61,9 +86,60 @@ input[type="submit"] {
 a {
   font-size: 1.2em;
   color: #008ffd;
+  text-decoration: none;
 }
+#toggle-visibility-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #dad6d6;
+}
+#toggle-visibility {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.error-box {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  font-size: 1.2em;
+  color: #f11211;
+}
+#succesfull-register {
+  display: none;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+#message {
+  font-size: 1.1em;
+  color: #dad6d6;
+  width: 100%;
+  text-align: left;
+}
+#move-to-login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 0;
+  color: #dad6d6;
+  font-size: 1.2em;
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #40c057;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
-  #container {
+  #container,
+  #succesfull-register {
     width: 500px;
     margin-top: 150px;
   }
