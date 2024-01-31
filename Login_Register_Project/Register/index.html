@@ -10,12 +10,34 @@
     <section id="container">
       <h1 id="title">Register</h1>
       <form action="" name="" id="register-form">
-        <input id="user-name-input" placeholder="Username" />
-        <input type="password" id="password-input" placeholder="Password" />
-        <input type="password" id="confirm-password-input" placeholder="Confirm password" />
-        <a href="../index.html">Already have an account? Login</a>
-        <input type="submit" id="register-button" value="Register" />
+        <section id="first-step">
+          <input id="email-input" placeholder="Email" autocomplete="new-password" />
+          <p id="email-error-box" class="error-box"></p>
+          <input type="password" id="password-input" placeholder="Password" autocomplete="new-password" />
+          <p id="password-error-box" class="error-box"></p>
+          <input type="password" id="confirm-password-input" placeholder="Confirm password" autocomplete="new-password" />
+          <p id="confirm-password-error-box" class="error-box"></p>
+          <p id="register-error-box" class="error-box"></p>
+          <section id="toggle-visibility-container">
+            <input type="checkbox" id="toggle-visibility" />
+            <label for="toggle-visibility">Show password</label>
+          </section>
+          <a href="../index.html">Already have an account? Login</a>
+          <button id="next-step-button" type="button">Next Step</button>
+        </section>
+        <section id="second-step">
+          <input type="text" id="phone-number-input" placeholder="Backup phone number(optional)" />
+          <p id="phone-number-error-box" class="error-box"></p>
+          <input type="submit" id="register-button" value="Register" />
+        </section>
       </form>
+    </section>
+    <section id="succesfull-register">
+      <h1 id="title">You have registered</h1>
+      <p id="message"></p>
+      <a href="../index.html">
+        <button id="move-to-login-page">Login</button>
+      </a>
     </section>
   </body>
   <script src="../Javascript/Register.js"></script>
