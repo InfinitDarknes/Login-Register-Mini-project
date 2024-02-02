@@ -46,7 +46,7 @@ function CheckEmailInput() {
   RegisterErrorBox.innerText = "";
   let Email = document.getElementById("email-input").value.trim();
   let EmailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (!Email || Email === "") {
+  if (!Email) {
     EmailErrorBox.innerText = "Please insert a Email";
     return false;
   }
@@ -66,10 +66,10 @@ function CheckPasswordInput() {
   PasswordErrorBox.innerText = "";
   ConfirmPasswordErrorBox.innerText = "";
   RegisterErrorBox.innerText = "";
-  let PasswordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d!@#$%^&*_:]*$/;
+  let PasswordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d\W]*$/;
   let Password = document.getElementById("password-input").value.trim();
   let ConfirmPassword = document.getElementById("confirm-password-input").value.trim();
-  if (!Password || Password === "") {
+  if (!Password) {
     PasswordErrorBox.innerText = "Please insert a Password";
     return false;
   }
@@ -93,7 +93,7 @@ function CheckPasswordInput() {
 function CheckPhoneNumberInput() {
   let PhoneNumberPattern = /^09\d{9}$/;
   let PhoneNumber = document.getElementById("phone-number-input").value.trim();
-  if (PhoneNumber === "") {
+  if (!PhoneNumber) {
     PhoneNumberErrorBox.innerText = "";
     return true; // Because phone number is optional
   }
