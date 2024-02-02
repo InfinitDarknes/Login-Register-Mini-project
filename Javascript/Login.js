@@ -30,7 +30,7 @@ function CheckEmailOrPhoneNumberInput() {
   EmailOrPhoneNumberErrorBox.innerText = "";
   LoginErrorBox.innerText = "";
   let Input = document.getElementById("email-or-phone-number-input").value.trim();
-  if (!Input || Input === "") {
+  if (!Input) {
     EmailOrPhoneNumberErrorBox.innerText = "Please enter an email or phone number";
     return false;
   }
@@ -45,14 +45,12 @@ function CheckEmailOrPhoneNumberInput() {
 function CheckEmail() {
   let Input = document.getElementById("email-or-phone-number-input").value.trim();
   if (EmailPattern.test(Input)) {
-    console.log("email detected");
     return Users.find((User) => {
       if (User.Email === Input) return true;
       else return false;
     });
   }
   if (PhoneNumberPattern.test(Input)) {
-    console.log("phone number detected");
     return Users.find((User) => {
       if (User.PhoneNumber === Input) return true;
       else return false;
@@ -63,7 +61,7 @@ function CheckPasswordInput() {
   PasswordErrorBox.innerText = "";
   LoginErrorBox.innerText = "";
   let Password = document.getElementById("password-input").value.trim();
-  if (!Password || Password === "") {
+  if (!Password) {
     PasswordErrorBox.innerText = "Please insert a Password";
     return false;
   } else {
@@ -76,13 +74,13 @@ function CheckPassword() {
   let Password = document.getElementById("password-input").value.trim();
   let User;
   if (EmailPattern.test(Input)) {
-    console.log("email detected");
+    console.log("Email detected");
     User = Users.find((i) => {
       return i.Email === Input;
     });
   }
   if (PhoneNumberPattern.test(Input)) {
-    console.log("phone number detected");
+    console.log("Phone number detected");
     User = Users.find((i) => {
       return i.PhoneNumber === Input;
     });
@@ -91,9 +89,17 @@ function CheckPassword() {
   else return true;
 }
 function Login() {
-  if (!CheckEmailOrPhoneNumberInput()) return;
-  if (!CheckPasswordInput()) return;
-  if (!CheckPassword() || !CheckEmail()) {
+  if (!CheckEmailOrPhoneNumberInput()) {
+    return;
+  }
+  if (!CheckPasswordInput()) {
+    return;
+  }
+  if (!CheckEmail()) {
+    LoginErrorBox.innerText = "Provided info is incorrect";
+    return;
+  }
+  if (!CheckPassword()) {
     LoginErrorBox.innerText = "Provided info is incorrect";
     return;
   } else alert("login successfully");
