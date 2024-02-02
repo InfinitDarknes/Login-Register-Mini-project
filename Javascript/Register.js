@@ -66,7 +66,7 @@ function CheckPasswordInput() {
   PasswordErrorBox.innerText = "";
   ConfirmPasswordErrorBox.innerText = "";
   RegisterErrorBox.innerText = "";
-  let PasswordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d\W]*$/;
+  let PasswordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d!@#$%^&*_:.%`?<>(){}"'|;/~=-]*$/;
   let Password = document.getElementById("password-input").value.trim();
   let ConfirmPassword = document.getElementById("confirm-password-input").value.trim();
   if (!Password) {
