@@ -15,7 +15,7 @@ LoginForm.addEventListener("submit", (Event) => {
   Event.preventDefault();
   Login();
 });
-EmailOrPhoneNumberInput.addEventListener("blur", CheckEmailOrPhoneNumberInput);
+EmailOrPhoneNumberInput.addEventListener("input", CheckEmailOrPhoneNumberInput);
 PasswordInput.addEventListener("input", CheckPasswordInput);
 ToggleVisbilityCheckbox.addEventListener("change", ToggleVisbility);
 let Users = [
